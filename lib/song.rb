@@ -14,8 +14,8 @@ class Song
     @@artists << @artist
     @@genres << @genre
     @@count += 1
-    # @@genre_count[@genre] ||= @@genre_count[@genre] += 1
-    # @@artists[@artists] ||= @@artists[@artists] += 1
+    @@genre_count[@genre] == nil ? @@genre_count[@genre] = 1 : @@genre_count[@genre] += 1
+    @@artists[@artists] == nil ? @@artists[@artists] = 1 : @@artists[@artists] += 1
   end
 
   def self.count
@@ -31,6 +31,10 @@ class Song
   end
 
   def artist_count
-    @@artists
+    @@artists_count
+  end
+
+  def genre_count
+    @@genre_count
   end
 end
